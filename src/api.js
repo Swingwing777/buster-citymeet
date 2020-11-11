@@ -1,4 +1,4 @@
-/**
+/*
  *
  * @param {*} events:
  * The following function should be in the “api.js” file.
