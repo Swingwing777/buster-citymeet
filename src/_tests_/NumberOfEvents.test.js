@@ -1,4 +1,4 @@
-// src/_tests_/CitySearch.test.js
+// src/_tests_/NumberOfEvents.test.js
 
 import React from 'react';
 import { shallow } from 'enzyme';

@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
+
+  //default is 32
   state = {
     numEvents: 32
   }
