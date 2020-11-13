@@ -3,15 +3,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
-import { mockData } from "../mock-data";
-import { extractLocations } from "../api";
+import { mockData } from "../_support_/mock-data";
+import { extractLocations } from "../_support_/api";
 
 describe('<CitySearch /> component', () => {
 
   let locations, CitySearchWrapper;
   beforeAll(() => {
     locations = extractLocations(mockData);
-    CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+    CitySearchWrapper = shallow
+      (<CitySearch
+        locations={locations}
+        updateEvents={() => { }}
+      />);
   });
 
   test('render text input', () => {

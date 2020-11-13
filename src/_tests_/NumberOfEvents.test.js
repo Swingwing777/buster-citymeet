@@ -3,8 +3,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import NumberOfEvents from '../NumberOfEvents';
-// import { mockData } from "../mock-data";
-// import { extractLocations } from "../api";
+// import { mockData } from "../_support_/mock-data";
+// import { extractLocations } from "../_support_/api";
 
 describe('<NumberOfEvents /> component', () => {
 
