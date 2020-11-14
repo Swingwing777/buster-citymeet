@@ -10,44 +10,40 @@ import { getEvents, extractLocations } from './_support_/api';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
   }
 
   updateEvents = (location) => {
     getEvents()
       .then((events) => {
-        const locationEvents = (location === 'all') ?
-          events :
-          events.filter((event) => event.location === location);
+        const locationEvents = (location === 'all')
+          ? events
+          : events.filter((event) => event.location === location);
         this.setState({
           events: locationEvents
         })
-      })
-      .catch((error) => {
-        console.log(error);
       });
   }
 
-  // to get API events as soon as App is opened.
-  // componentDidMount() {
-  //   this.mounted = true;
-  //   getEvents()
-  //     .then((response) => {
-  //       if (this.mounted) {
-  //         this.setState({
-  //           events: response.events,
-  //           locations: response.locations
-  //         });
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
+  componentDidMount() {
+    this.mounted = true;
+    getEvents()
+      .then((response) => {
+        if (this.mounted) {
+          this.setState({
+            events: response.events,
+            locations: extractLocations(response.events)
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-  // componentWillUnmount() {
-  //   this.mounted = false;
-  // }
+  componentWillUnmount() {
+    this.mounted = false;
+  }
 
   render() {
     return (
