@@ -6,6 +6,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
+// import { getEvents } from './_support_/api';
 import { getEvents, extractLocations } from './_support_/api';
 
 class App extends Component {
@@ -25,50 +26,6 @@ class App extends Component {
     });
   }
 
-  //  Version 1 - failed
-  // componentDidMount() {
-  //   getEvents().then((response) => {
-  //     this.setState({
-  //       events: response.events,
-  //       locations: extractLocations(response.events)
-  //     });
-  //   })
-  //     .catch((err) => {    
-  //       console.log(err);
-  //     });
-  // }
-
-  // Version 2 - failed
-  // componentDidMount() {
-  //   getEvents().then((response) => {
-  //     this.setState({
-  //       events: response.events,
-  //       locations: response.locations
-  //     });
-  //   })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // Version 3 - failed
-  // componentDidMount() {
-  //   this.mounted = true;
-  //   getEvents().then((response) => {
-  //     if (this.mounted) {
-  //       this.setState({ events: response.events, locations: response.locations });
-  //     }
-  //   })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // componentWillUnmount() {
-  //   this.mounted = false;
-  // }
-
-  // Version 4 - successful
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {

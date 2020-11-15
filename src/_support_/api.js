@@ -9,3 +9,7 @@ export const extractLocations = (events) => {
 export const getEvents = async () => {
   return mockData;
 };
+
+// export const getEvents = async () => {
+//   return { events: mockData, locations: extractLocations(mockData) };
+// };
