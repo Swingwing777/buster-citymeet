@@ -73,3 +73,27 @@ describe('<App /> integration', () => {
   });
 
 });
+
+// Add additional test to test for console.log(err) on line 37 of App.js
+// https://stackoverflow.com/questions/49096093/how-do-i-test-a-jest-console-log
+
+// describe("Some logging behavior", () => {
+//   const log = console.log; // save original console.log function
+//   beforeEach(() => {
+//     console.log = jest.fn(); // create a new mock function for each test
+//   });
+//   afterAll(() => {
+//     console.log = log; // restore original console.log after all tests
+//   });
+//   test("no log", () => {
+//     // TODO: test something that should not log
+//     expect(console.log).not.toHaveBeenCalled();
+//   });
+//   test("some log", () => {
+//     // TODO: test something that should log
+//     expect(console.log).toHaveBeenCalled();
+//     const message = console.log.mock.calls[0][0]; // get log message
+//     expect(message).toEqual(expect.stringContaining('something')); // assert on the message content
+//     log(message); // actually log out what the mock was called with
+//   });
+// });
