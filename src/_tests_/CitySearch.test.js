@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
-import { mockData } from "../mock-data";
+import { mockData } from "../_support_mock-data";
 import { extractLocations } from "../_support_/api";
 
 describe('<CitySearch /> component', () => {
