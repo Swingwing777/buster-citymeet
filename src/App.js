@@ -25,18 +25,64 @@ class App extends Component {
     });
   }
 
+  //  Version 1
+  // componentDidMount() {
+  //   getEvents().then((response) => {
+  //     this.setState({
+  //       events: response.events,
+  //       locations: extractLocations(response.events)
+  //     });
+  //   })
+  //     .catch((err) => {    
+  //       console.log(err);
+  //     });
+  // }
+
+  // Version 2
+  // componentDidMount() {
+  //   getEvents().then((response) => {
+  //     this.setState({
+  //       events: response.events,
+  //       locations: response.locations
+  //     });
+  //   })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
+
+  // Version 3
   componentDidMount() {
+    this.mounted = true;
     getEvents().then((response) => {
-      this.setState({
-        events: response.events,
-        locations: extractLocations(response.events)
-      });
+      if (this.mounted) {
+        this.setState({ events: response.events, locations: response.locations });
+      }
     })
       .catch((err) => {
         console.log(err);
       });
   }
 
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((response) => {
+      if (this.mounted) {
+        this.setState({ events: response.events, locations: response.locations });
+      }
+    })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
 
   render() {
     return (
