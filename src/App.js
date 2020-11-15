@@ -8,12 +8,16 @@ import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
 
 class App extends Component {
+  state = {
+    events: [],
+    locations: []
+  }
   render() {
     return (
       <div className="App">
         <Container>
-          <CitySearch />
-          <EventList />
+          <CitySearch locations={this.state.locations} />
+          <EventList events={this.state.events} />
           <NumberOfEvents />
         </Container>
       </div >
