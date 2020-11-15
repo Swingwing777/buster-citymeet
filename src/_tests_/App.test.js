@@ -1,6 +1,8 @@
 // src/App.test.js
 
 import React from 'react';
+
+// Do not use React 17.0 if using mount from enzyme.  Must roll back to react 16.14.0
 import { shallow, mount } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
@@ -29,28 +31,21 @@ describe('<App /> component', () => {
 });
 
 describe('<App /> integration', () => {
-  let AppWrapper;
-  beforeAll(() => {
-    AppWrapper = mount(<App />);
-  });
-  afterAll(() => {
-    AppWrapper.unmount();
-  });
 
   test('App passes "events" state as a prop to EventList', () => {
-    // const AppWrapper = mount(<App />);
+    const AppWrapper = mount(<App />);
     const AppEventsState = AppWrapper.state('events');
     expect(AppEventsState).not.toEqual(undefined);
     expect(AppWrapper.find(EventList).props().events).toEqual(AppEventsState);
-    // AppWrapper.unmount();
+    AppWrapper.unmount();
   });
 
   test('App passes "locations" state as a prop to CitySearch', () => {
-    // const AppWrapper = mount(<App />);
+    const AppWrapper = mount(<App />);
     const AppLocationsState = AppWrapper.state('locations');
     expect(AppLocationsState).not.toEqual(undefined);
     expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationsState);
-    // AppWrapper.unmount();
+    AppWrapper.unmount();
   });
 
   test('get list of events matching the city selected by the user', async () => {
