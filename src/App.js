@@ -25,7 +25,7 @@ class App extends Component {
     });
   }
 
-  //  Version 1
+  //  Version 1 - failed
   // componentDidMount() {
   //   getEvents().then((response) => {
   //     this.setState({
@@ -38,7 +38,7 @@ class App extends Component {
   //     });
   // }
 
-  // Version 2
+  // Version 2 - failed
   // componentDidMount() {
   //   getEvents().then((response) => {
   //     this.setState({
@@ -51,28 +51,29 @@ class App extends Component {
   //     });
   // }
 
-  // Version 3
+  // Version 3 - failed
+  // componentDidMount() {
+  //   this.mounted = true;
+  //   getEvents().then((response) => {
+  //     if (this.mounted) {
+  //       this.setState({ events: response.events, locations: response.locations });
+  //     }
+  //   })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
+
+  // componentWillUnmount() {
+  //   this.mounted = false;
+  // }
+
+  // Version 4 - successful
   componentDidMount() {
     this.mounted = true;
-    getEvents().then((response) => {
+    getEvents().then((events) => {
       if (this.mounted) {
-        this.setState({ events: response.events, locations: response.locations });
-      }
-    })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-
-  componentDidMount() {
-    this.mounted = true;
-    getEvents().then((response) => {
-      if (this.mounted) {
-        this.setState({ events: response.events, locations: response.locations });
+        this.setState({ events, locations: extractLocations(events) });
       }
     })
       .catch((err) => {
