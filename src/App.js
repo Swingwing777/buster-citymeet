@@ -5,7 +5,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
 
 class App extends Component {
   render() {
