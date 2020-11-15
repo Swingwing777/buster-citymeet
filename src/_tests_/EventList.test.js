@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import EventList from '../EventList';
 import Event from '../Event';
 import { mockData } from '../_support_/mock-data';
+import { extractLocations } from '../_support_/api';
 
 describe('<EventList /> component', () => {
   test('render correct number of events', () => {
