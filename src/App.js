@@ -6,7 +6,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
-import { getEvents } from './_support_/api';
+import { getEvents, extractLocations } from './_support_/api';
 
 class App extends Component {
   state = {
@@ -24,6 +24,19 @@ class App extends Component {
       });
     });
   }
+
+  componentDidMount() {
+    getEvents().then((response) => {
+      this.setState({
+        events: response.events,
+        locations: extractLocations(response.events)
+      });
+    })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
 
   render() {
     return (
