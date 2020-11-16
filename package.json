@@ -21,6 +21,15 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "src/reportWebVitals.js",
+      "src/index.js"
+    ],
+    "collectCoverageFrom": [
+      "src/{!(reportWebVitals),}.js"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
