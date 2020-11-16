@@ -74,12 +74,23 @@ describe('<App /> integration', () => {
 
   test('App passes "showEventCount" state as a prop to EventList', () => {
     const AppWrapper = mount(<App />);
-    AppWrapper.setState({ showEventCount: 5 });
+    AppWrapper.setState({ showEventCount: 10 });
     const AppEventsState = AppWrapper.state('showEventCount');
     expect(AppEventsState).not.toEqual(undefined);
     expect(AppWrapper.find(EventList).props().showEventCount).toEqual(AppEventsState);
     AppWrapper.unmount();
   });
+
+  test('get correct number of events as selected by the user', () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    const eventObject = { target: { value: 14 } };
+    NumberOfEventsWrapper.find('.viewNumber').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.state('eventCount')).toBe(14);
+    expect(AppWrapper.state('showEventCount')).toEqual(NumberOfEventsWrapper.state('eventCount'));
+    AppWrapper.unmount();
+  });
+
 });
 
 // Add additional test to test for console.log(err) on line 37 of App.js

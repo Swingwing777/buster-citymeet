@@ -12,13 +12,15 @@ class NumberOfEvents extends Component {
   handleNumberChanged = (event) => {
     const value = event.target.value;
     this.setState({ eventCount: value });
-    // if (value !== "") {
-    //   this.props.updateNumberOfEvents(+value);
-    //}
+
+    // if user has input value, call updateEventCount() in App.js
+    if (value !== "") {
+      this.props.updateEventCount(value);
+    }
   }
 
   render() {
-    return <div>
+    return <div className="NumberOfEvents">
       <input
         type="number"
         className="viewNumber"

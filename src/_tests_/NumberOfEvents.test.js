@@ -10,7 +10,11 @@ describe('<NumberOfEvents /> component', () => {
 
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents length='2' />);  // This limits total to 2
+    NumberOfEventsWrapper = shallow(
+      <NumberOfEvents
+        length='2'
+        updateEventCount={() => { }} />
+    );
   });
 
   test('render input element', () => {
