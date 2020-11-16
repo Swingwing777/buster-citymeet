@@ -18,17 +18,17 @@ describe('<NumberOfEvents /> component', () => {
   });
 
   test('renders text input correctly', () => {
-    const numEvents = NumberOfEventsWrapper.state('numEvents');
-    expect(NumberOfEventsWrapper.find('.viewNumber').prop('value')).toBe(numEvents);
+    const eventCount = NumberOfEventsWrapper.state('eventCount');
+    expect(NumberOfEventsWrapper.find('.viewNumber').prop('value')).toBe(eventCount);
   });
 
   test('change state when number input changes', () => {
     NumberOfEventsWrapper.setState({
-      numEvents: 32
+      eventCount: 32
     });
     const eventObject = { target: { value: 17 } };
     NumberOfEventsWrapper.find('.viewNumber').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('numEvents')).toBe(17);
+    expect(NumberOfEventsWrapper.state('eventCount')).toBe(17);
   });
 
 });
