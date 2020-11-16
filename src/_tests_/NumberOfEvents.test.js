@@ -35,6 +35,16 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.state('eventCount')).toBe(17);
   });
 
+  // test('ensure no call of change state when number input changes', () => {
+  //   NumberOfEventsWrapper.setState({
+  //     eventCount: 32
+  //   });
+  //   const eventObject = { target: { value: 17 } };
+  //   NumberOfEventsWrapper.find('.viewNumber').simulate('change', eventObject);
+  //   expect(NumberOfEventsWrapper.state('eventCount')).toBe(17);
+  // });
+
+
 });
 
 

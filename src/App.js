@@ -14,16 +14,23 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    showEventCount: 32
+    showEventCount: 32,
+    userFilter: [],
   }
 
   updateEvents = (location) => {
     getEvents().then((events) => {
+      const showEventCount = this.state.showEventCount;
+
       const locationEvents = (location === 'all')
         ? events
         : events.filter((event) => event.location === location);
+
+      const filteredEvents = locationEvents.slice(0, showEventCount)
+
       this.setState({
-        events: locationEvents
+        // new array matching locations and showEventCount filter.
+        events: filteredEvents
       });
     });
   }
