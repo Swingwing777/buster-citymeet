@@ -2,12 +2,13 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import "./nprogress.css";
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
-// import { getEvents } from './_support_/api';
 import { getEvents, extractLocations } from './_support_/api';
+
 
 class App extends Component {
   state = {
