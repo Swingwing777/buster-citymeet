@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Event from './Event';
+import { Card } from 'react-bootstrap';
 
 class EventList extends Component {
   render() {
@@ -10,9 +11,9 @@ class EventList extends Component {
     return (
       <ul className="EventList">
         {events.map(event =>
-          <li key={event.id}>
+          <Card key={event.id}>
             <Event event={event} />
-          </li>
+          </Card>
         )}
       </ul>
     );
