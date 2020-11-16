@@ -1,6 +1,7 @@
 // src/Event.js
 
 import React, { Component } from "react";
+import { Card } from 'react-bootstrap';
 
 class Event extends Component {
   state = {
@@ -16,7 +17,7 @@ class Event extends Component {
   render() {
     const { event } = this.props;
     if (!this.state.showDetails) {
-      return <div className='eventDetails'>
+      return <Card className='eventDetails'>
         <div className='eventSummary'>{event.summary}</div>
         <div className='eventStart'>{event.start.dateTime}</div>
         <div className='eventTimezone'>{event.start.timeZone}</div>
@@ -26,9 +27,9 @@ class Event extends Component {
           onClick={() => this.handleToggleDetails()}>
           Details
         </b>
-      </div>
+      </Card>
     }
-    return <div className='eventDetails'>
+    return <Card className='eventDetails'>
       <div className='eventSummary'>{event.summary}</div>
       <div className='eventStart'>{event.start.dateTime}</div>
       <div className='eventTimezone'>{event.start.timeZone}</div>
@@ -39,7 +40,7 @@ class Event extends Component {
         onClick={() => this.handleToggleDetails()}>
         Hide Details
         </b>
-    </div>;
+    </Card>;
   }
 };
 
