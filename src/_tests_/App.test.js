@@ -72,6 +72,14 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
+  test('App passes "showEventCount" state as a prop to EventList', () => {
+    const AppWrapper = mount(<App />);
+    AppWrapper.setState({ showEventCount: 5 });
+    const AppEventsState = AppWrapper.state('showEventCount');
+    expect(AppEventsState).not.toEqual(undefined);
+    expect(AppWrapper.find(EventList).props().showEventCount).toEqual(AppEventsState);
+    AppWrapper.unmount();
+  });
 });
 
 // Add additional test to test for console.log(err) on line 37 of App.js

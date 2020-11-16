@@ -13,7 +13,8 @@ import { getEvents, extractLocations } from './_support_/api';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    showEventCount: 32
   }
 
   updateEvents = (location) => {
@@ -50,7 +51,9 @@ class App extends Component {
           <CitySearch
             locations={this.state.locations}
             updateEvents={this.updateEvents} />
-          <EventList events={this.state.events} />
+          <EventList
+            events={this.state.events}
+            showEventCount={this.state.showEventCount} />
           <NumberOfEvents />
         </Container>
       </div >
