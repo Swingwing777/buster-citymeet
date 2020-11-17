@@ -18,7 +18,7 @@ class Event extends Component {
   render() {
     const { event } = this.props;
     if (!this.state.showDetails) {
-      return <Card className='eventDetails'>
+      return <Card className='event'>
         <div className='eventSummary'>{event.summary}</div>
         <div
           className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm:ss a")}
@@ -32,7 +32,7 @@ class Event extends Component {
         </b>
       </Card>
     }
-    return <Card className='eventDetails'>
+    return <Card className='event'>
       <div className='eventSummary'>{event.summary}</div>
       <div
         className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm:ss a")}
