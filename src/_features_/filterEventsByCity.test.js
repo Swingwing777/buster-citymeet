@@ -2,7 +2,7 @@
 
 import { loadFeature, defineFeature } from 'jest-cucumber';
 
-const feature = loadFeature('./filterEventsByCity.feature');
+const feature = loadFeature('./src/_features_/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
 
