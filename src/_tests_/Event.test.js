@@ -26,7 +26,7 @@ describe('<Event /> component', () => {
   })
 
   test('that event parent element exists', () => {
-    expect(EventWrapper.find('.eventDetails')).toHaveLength(1);
+    expect(EventWrapper.find('.event')).toHaveLength(1);
   });
   test('that one button element exists', () => {
     expect(EventWrapper.find('.buttonDetails')).toHaveLength(1);
