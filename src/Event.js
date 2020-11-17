@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import { Card } from 'react-bootstrap';
+import moment from 'moment'
 
 class Event extends Component {
   state = {
@@ -31,7 +32,9 @@ class Event extends Component {
     }
     return <Card className='eventDetails'>
       <div className='eventSummary'>{event.summary}</div>
-      <div className='eventStart'>{event.start.dateTime}</div>
+      <div
+        className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm:ss a")}
+      </div>
       <div className='eventTimezone'>{event.start.timeZone}</div>
       <div className='eventLocation'>{event.location}</div>
       <div className='eventDescription'>{event.description}</div>
@@ -39,7 +42,7 @@ class Event extends Component {
         className='buttonDetails'
         onClick={() => this.handleToggleDetails()}>
         Hide Details
-        </b>
+      </b>
     </Card>;
   }
 };
