@@ -1,4 +1,4 @@
-Feature: Show/hide an event's details.
+Feature: Show/hide an events details.
 
   Scenario: An event element is collapsed by default
     Given that the user has not selected an event
