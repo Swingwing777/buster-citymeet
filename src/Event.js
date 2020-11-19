@@ -26,7 +26,7 @@ class Event extends Component {
         <div className='eventTimezone'>{event.start.timeZone}</div>
         <div className='eventLocation'>{event.location}</div>
         <b
-          className='buttonDetails'
+          className='details-btn'
           onClick={() => this.handleToggleDetails()}>
           Details
         </b>
@@ -41,7 +41,7 @@ class Event extends Component {
       <div className='eventLocation'>{event.location}</div>
       <div className='eventDetails'>{event.description}</div>
       <b
-        className='buttonDetails'
+        className='details-btn'
         onClick={() => this.handleToggleDetails()}>
         Hide Details
       </b>

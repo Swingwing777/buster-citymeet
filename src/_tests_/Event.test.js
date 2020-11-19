@@ -29,11 +29,11 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event')).toHaveLength(1);
   });
   test('that one button element exists', () => {
-    expect(EventWrapper.find('.buttonDetails')).toHaveLength(1);
+    expect(EventWrapper.find('.details-btn')).toHaveLength(1);
   });
   test('that Event state toggles on button click', () => {
     const showDetailsState = EventWrapper.state('showDetails');
-    EventWrapper.find('.buttonDetails').at(0).simulate('click');
+    EventWrapper.find('.details-btn').at(0).simulate('click');
     expect(EventWrapper.state('showDetails')).toBe(!showDetailsState);
   });
 
@@ -46,13 +46,13 @@ describe('<Event /> component', () => {
   });
 
   test('that event.description displays on first button click, hides on second', () => {
-    EventWrapper.find('.buttonDetails').at(0).simulate('click');
+    EventWrapper.find('.details-btn').at(0).simulate('click');
     expect(EventWrapper.find('.eventSummary')).toHaveLength(1);
     expect(EventWrapper.find('.eventStart')).toHaveLength(1);
     expect(EventWrapper.find('.eventTimezone')).toHaveLength(1);
     expect(EventWrapper.find('.eventLocation')).toHaveLength(1);
     expect(EventWrapper.find('.eventDetails')).toHaveLength(1);
-    EventWrapper.find('.buttonDetails').at(0).simulate('click');
+    EventWrapper.find('.details-btn').at(0).simulate('click');
     expect(EventWrapper.find('.eventDetails')).toHaveLength(0);
   });
   test('that Event description hidden by default', () => {
