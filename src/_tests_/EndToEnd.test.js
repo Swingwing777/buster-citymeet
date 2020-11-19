@@ -1,6 +1,11 @@
 const puppeteer = require('puppeteer');
 
 describe('show/hide an event details', () => {
+
+  beforeAll(() => {
+    jest.setTimeout(30000)
+  })
+
   test('An event element is collapsed by default', async () => {
     const browser = await puppeteer.launch();
 
@@ -9,7 +14,7 @@ describe('show/hide an event details', () => {
 
     await page.waitForSelector('.event');
 
-    const eventDetails = await page.$('.event .event__Details');
+    const eventDetails = await page.$('.event .eventDetails');
     expect(eventDetails).toBeNull();
     browser.close();
   });

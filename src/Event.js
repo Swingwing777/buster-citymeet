@@ -39,7 +39,7 @@ class Event extends Component {
       </div>
       <div className='eventTimezone'>{event.start.timeZone}</div>
       <div className='eventLocation'>{event.location}</div>
-      <div className='eventDescription'>{event.description}</div>
+      <div className='eventDetails'>{event.description}</div>
       <b
         className='buttonDetails'
         onClick={() => this.handleToggleDetails()}>

@@ -42,7 +42,7 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.eventStart')).toHaveLength(1);
     expect(EventWrapper.find('.eventTimezone')).toHaveLength(1);
     expect(EventWrapper.find('.eventLocation')).toHaveLength(1);
-    expect(EventWrapper.find('.eventDescription')).toHaveLength(0);
+    expect(EventWrapper.find('.eventDetails')).toHaveLength(0);
   });
 
   test('that event.description displays on first button click, hides on second', () => {
@@ -51,12 +51,12 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.eventStart')).toHaveLength(1);
     expect(EventWrapper.find('.eventTimezone')).toHaveLength(1);
     expect(EventWrapper.find('.eventLocation')).toHaveLength(1);
-    expect(EventWrapper.find('.eventDescription')).toHaveLength(1);
+    expect(EventWrapper.find('.eventDetails')).toHaveLength(1);
     EventWrapper.find('.buttonDetails').at(0).simulate('click');
-    expect(EventWrapper.find('.eventDescription')).toHaveLength(0);
+    expect(EventWrapper.find('.eventDetails')).toHaveLength(0);
   });
   test('that Event description hidden by default', () => {
-    expect(EventWrapper.find('.eventDescription')).toHaveLength(0);
+    expect(EventWrapper.find('.eventDetails')).toHaveLength(0);
   });
 });
 
