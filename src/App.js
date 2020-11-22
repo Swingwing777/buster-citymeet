@@ -60,6 +60,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>CityMeet Calendar</h1>
         <Container>
           <CitySearch
             locations={this.state.locations}
