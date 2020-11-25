@@ -21,7 +21,7 @@ class Event extends Component {
       return <Card className='event'>
         <div className='eventSummary'>{event.summary}</div>
         <div
-          className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm:ss a")}
+          className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm a")}
         </div>
         <div className='eventTimezone'>{event.start.timeZone}</div>
         <div className='eventLocation'>{event.location}</div>
@@ -35,7 +35,7 @@ class Event extends Component {
     return <Card className='event'>
       <div className='eventSummary'>{event.summary}</div>
       <div
-        className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm:ss a")}
+        className='eventStart'>{moment(event.start.dateTime).format("D MMM YYYY, h:mm a")}
       </div>
       <div className='eventTimezone'>{event.start.timeZone}</div>
       <div className='eventLocation'>{event.location}</div>

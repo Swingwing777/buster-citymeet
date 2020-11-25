@@ -60,15 +60,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>CityMeet Calendar</h1>
         <Container>
           <CitySearch
             locations={this.state.locations}
             updateEvents={this.updateEvents} />
-          <EventList
-            events={this.state.events}
-            showEventCount={this.state.showEventCount} />
           <NumberOfEvents
             updateEventCount={this.updateEventCount}
+          />
+          <EventList
+            events={this.state.events}
+            showEventCount={this.state.showEventCount}
           />
         </Container>
       </div >
