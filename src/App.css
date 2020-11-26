@@ -38,7 +38,17 @@ input[type="number"] {
   display: inline;
 }
 
+.Alert p {
+  display: block;
+  text-align: center;
+  z-index: 2;
+}
 
+.infoAlert {
+  display: block;
+  text-align: center;
+  z-index:3;
+}
 
 .city {
   width: 250px;
