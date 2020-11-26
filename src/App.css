@@ -38,18 +38,6 @@ input[type="number"] {
   display: inline;
 }
 
-.Alert p {
-  display: block;
-  text-align: center;
-  z-index: 2;
-}
-
-.infoAlert {
-  display: block;
-  text-align: center;
-  z-index:3;
-}
-
 .city {
   width: 250px;
 }
@@ -128,7 +116,7 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
+.NumberOfEvents {
   width: 200px;
   margin: 20px auto;
   text-align: center;
@@ -142,9 +130,20 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+/* .Alert {
   position: fixed;
   top: 20px;
+} */
+
+.Alert {
+  position: fixed;
+  z-index: 2;
+  align-self: center;
+  margin: 0;
+  top: 1%;
+  left: 5%;
+  text-align: center;
+  font-size: 16px;
 }
 
 .data-vis-wrapper {
