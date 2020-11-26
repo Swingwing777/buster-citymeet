@@ -17,7 +17,7 @@ class NumberOfEvents extends Component {
     if (value <= 0 || value > 32 || value === '') {
       this.setState({
         eventCount: value,
-        errorText: 'Please choose between 1 and 32'
+        errorText: 'Please choose a number between 1 and 32'
       });
 
       // if user has input value, call updateEventCount() in App.js
