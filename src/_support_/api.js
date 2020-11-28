@@ -3,6 +3,7 @@
 import { mockData } from './mock-data'
 import axios from 'axios';
 import NProgress from 'nprogress';
+import { handleConnectionChanged } from '../EventList';
 
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
@@ -23,8 +24,8 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
-  // var status = navigator.onLine ? 'online' : 'offline';
-  // console.log(status);
+  var status = navigator.onLine ? 'online' : 'offline';
+  console.log(status);
 
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
@@ -33,6 +34,8 @@ export const getEvents = async () => {
 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
+    handleConnectionChanged(status);
+
     NProgress.done();
     return { events: JSON.parse(events).events, locations: extractLocations(JSON.parse(events).events) };
   }

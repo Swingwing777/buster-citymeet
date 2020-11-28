@@ -10,12 +10,12 @@ class EventList extends Component {
     offlineText: ''
   }
 
-  handleConnectionChanged = () => {
-    var status = navigator.onLine ? 'online' : 'offline';
+  handleConnectionChanged = (status) => {
+    // var status = navigator.onLine ? 'online' : 'offline';
     console.log(status);
     if (status === 'offline') {
       this.setState({
-        offlineText: 'Working offline',
+        offlineText: 'Working offline.  Events not updated.',
       });
     } else {
       this.setState({
@@ -23,7 +23,6 @@ class EventList extends Component {
       })
     }
   }
-
 
   render() {
     const { events } = this.props;
