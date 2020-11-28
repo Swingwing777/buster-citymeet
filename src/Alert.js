@@ -36,6 +36,12 @@ class OfflineAlert extends Alert {
     super(props);
     this.color = 'green';
   }
+  getStyle = () => {
+    return {
+      color: this.color,
+      fontStyle: 'italic',
+    };
+  }
 }
 
 class WarningAlert extends Alert {
