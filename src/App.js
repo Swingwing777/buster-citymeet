@@ -7,7 +7,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
-import { getEvents, extractLocations } from './_support_/api';
+import { getEvents, extractLocations, handleConnectionChanged } from './_support_/api';
 
 
 class App extends Component {
@@ -16,6 +16,7 @@ class App extends Component {
     locations: [],
     showEventCount: 32,
     userFilter: [],
+    offlineAlert: '',
   }
 
   updateEvents = (location) => {
@@ -46,6 +47,7 @@ class App extends Component {
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
+        handleConnectionChanged();
       }
     })
       .catch((err) => {
