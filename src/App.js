@@ -8,6 +8,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { Container } from 'react-bootstrap';
 import { getEvents, extractLocations, handleConnectionChanged } from './_support_/api';
+import { OfflineAlert } from './Alert';
 
 
 class App extends Component {
@@ -64,6 +65,7 @@ class App extends Component {
       <div className="App">
         <h1>CityMeet Calendar</h1>
         <Container>
+          <OfflineAlert text={this.state.offlineText} />
           <CitySearch
             locations={this.state.locations}
             updateEvents={this.updateEvents} />
