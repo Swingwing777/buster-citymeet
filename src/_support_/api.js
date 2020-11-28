@@ -12,14 +12,6 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-//   // Alternative causes problem with EventList line 33
-//   if (navigator.onLine) {   // this is bypassed if offline.
-//     var extractLocations = events.map((event) => event.location);
-//     var locations = [...new Set(extractLocations)];
-//     return locations;
-//   }
-// };
-
 const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
@@ -37,15 +29,6 @@ export const getEvents = async () => {
     NProgress.done();
     return mockData;
   }
-
-  // if (!navigator.onLine) {
-  //   const events = localStorage.getItem("lastEvents");
-  //   NProgress.done();
-  //   return {
-  //     events: JSON.parse(events).events,
-  //     locations: extractLocations(JSON.parse(events).events)
-  //   };
-  // }
 
   if (!navigator.onLine) {
     const eventsString = localStorage.getItem("lastEvents");
