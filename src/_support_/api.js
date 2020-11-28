@@ -25,7 +25,7 @@ export const handleConnectionChanged = () => {
   console.log(status);
   if (status === 'offline') {
     this.setState({
-      offlineText: 'Working offline.  Events not updated.',
+      offlineText: 'Working offline. Events not updated.',
     });
   } else {
     this.setState({
@@ -97,10 +97,6 @@ const getToken = async (code) => {
 
   return access_token;
 };
-
-// export const getEvents = async () => {
-//   return { events: mockData, locations: extractLocations(mockData) };
-// };
 
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
