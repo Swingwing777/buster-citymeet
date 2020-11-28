@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import Event from './Event';
 import { OfflineAlert } from './Alert';
-import { handleConnectionChanged } from './_support_/api';
 
 class EventList extends Component {
 
@@ -12,8 +11,17 @@ class EventList extends Component {
   }
 
   componentDidMount() {
-    handleConnectionChanged()
-    console.log(this.state.offlineText);
+    var status = navigator.onLine ? 'online' : 'offline';
+    console.log(status);
+    if (status === 'offline') {
+      this.setState({
+        offlineText: 'Working offline. Events not updated.',
+      });
+    } else {
+      this.setState({
+        offlineText: '',
+      })
+    }
   }
 
   render() {

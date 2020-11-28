@@ -20,20 +20,6 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
-export const handleConnectionChanged = () => {
-  var status = navigator.onLine ? 'online' : 'offline';
-  console.log(status);
-  if (status === 'offline') {
-    this.setState({
-      offlineText: 'Working offline. Events not updated.',
-    });
-  } else {
-    this.setState({
-      offlineText: '',
-    })
-  }
-}
-
 export const getEvents = async () => {
   NProgress.start();
 
@@ -47,7 +33,7 @@ export const getEvents = async () => {
 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
-    // handleConnectionChanged(status);
+    console.log(events);
 
     NProgress.done();
     return { events: JSON.parse(events).events, locations: extractLocations(JSON.parse(events).events) };
