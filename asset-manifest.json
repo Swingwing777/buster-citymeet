@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/buster-citymeet/static/css/main.6b1613f3.chunk.css",
-    "main.js": "/buster-citymeet/static/js/main.14953a4b.chunk.js",
-    "main.js.map": "/buster-citymeet/static/js/main.14953a4b.chunk.js.map",
+    "main.js": "/buster-citymeet/static/js/main.a8f02301.chunk.js",
+    "main.js.map": "/buster-citymeet/static/js/main.a8f02301.chunk.js.map",
     "runtime-main.js": "/buster-citymeet/static/js/runtime-main.e92efdec.js",
     "runtime-main.js.map": "/buster-citymeet/static/js/runtime-main.e92efdec.js.map",
     "static/js/2.5b0babb8.chunk.js": "/buster-citymeet/static/js/2.5b0babb8.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.e92efdec.js",
     "static/js/2.5b0babb8.chunk.js",
     "static/css/main.6b1613f3.chunk.css",
-    "static/js/main.14953a4b.chunk.js"
+    "static/js/main.a8f02301.chunk.js"
   ]
 }
