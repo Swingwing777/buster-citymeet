@@ -5,9 +5,19 @@ import axios from 'axios';
 import NProgress from 'nprogress';
 
 export const extractLocations = (events) => {
-  var extractLocations = events.map((event) => event.location);
-  var locations = [...new Set(extractLocations)];
-  return locations;
+
+  //   // Original
+  //   var extractLocations = events.map((event) => event.location);
+  //   var locations = [...new Set(extractLocations)];
+  //   return locations;
+  // };
+
+  // Alternative
+  if (navigator.onLine) {
+    var extractLocations = events.map((event) => event.location);
+    var locations = [...new Set(extractLocations)];
+    return locations;
+  }
 };
 
 const checkToken = async (accessToken) => {
@@ -32,12 +42,23 @@ export const getEvents = async () => {
   }
 
   // CF version
+  // if (!navigator.onLine) {
+  //   const events = localStorage.getItem("lastEvents");
+  //   NProgress.done();
+  //   return {
+  //     events: JSON.parse(events).events,
+  //     locations: extractLocations(JSON.parse(events).events)
+  //   };
+  // }
+
+  // Alternative
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
+    const locations = localStorage.getItem("locations");
     NProgress.done();
     return {
       events: JSON.parse(events).events,
-      locations: extractLocations(JSON.parse(events).events)
+      locations: JSON.parse(locations)
     };
   }
 
