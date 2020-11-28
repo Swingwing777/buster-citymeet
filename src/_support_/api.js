@@ -23,8 +23,6 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
-  // var status = navigator.onLine ? 'online' : 'offline';
-  // console.log(status);
 
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
@@ -33,11 +31,12 @@ export const getEvents = async () => {
 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
+    const locations = localStorage.getItem("locations");  // added by me
     // console.log(events);
 
     NProgress.done();
-    // return { events: JSON.parse(events).events, locations: extractLocations(JSON.parse(events).events) };
-    return { events: JSON.parse(events).events };
+    // return { events: JSON.parse(events).events, locations: extractLocations(JSON.parse(events).events) };  // CF version
+    return { events: JSON.parse(events), locations: JSON.parse(locations) };
   }
 
   const token = await getAccessToken();
