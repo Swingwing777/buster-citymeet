@@ -6,19 +6,19 @@ import NProgress from 'nprogress';
 
 export const extractLocations = (events) => {
 
-  //   // Original
-  //   var extractLocations = events.map((event) => event.location);
-  //   var locations = [...new Set(extractLocations)];
-  //   return locations;
-  // };
-
-  // Alternative
-  if (navigator.onLine) {
-    var extractLocations = events.map((event) => event.location);
-    var locations = [...new Set(extractLocations)];
-    return locations;
-  }
+  // Original
+  var extractLocations = events.map((event) => event.location);
+  var locations = [...new Set(extractLocations)];
+  return locations;
 };
+
+//   // Alternative causes problem with EventList line 33
+//   if (navigator.onLine) {   // this is bypassed if offline.
+//     var extractLocations = events.map((event) => event.location);
+//     var locations = [...new Set(extractLocations)];
+//     return locations;
+//   }
+// };
 
 const checkToken = async (accessToken) => {
   const result = await fetch(
@@ -33,15 +33,11 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
-  // var status = navigator.onLine ? 'online' : 'offline';
-  // console.log(status);
-
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
     return mockData;
   }
 
-  // CF version
   // if (!navigator.onLine) {
   //   const events = localStorage.getItem("lastEvents");
   //   NProgress.done();
@@ -51,16 +47,12 @@ export const getEvents = async () => {
   //   };
   // }
 
-  // Alternative
   if (!navigator.onLine) {
-    const events = localStorage.getItem("lastEvents");
-    const locations = localStorage.getItem("locations");
+    const eventsString = localStorage.getItem("lastEvents");
+    const eventsParsed = JSON.parse(eventsString);
     NProgress.done();
-    return {
-      events: JSON.parse(events).events,
-      locations: JSON.parse(locations)
-    };
-  }
+    return eventsParsed.events;
+  };
 
   const token = await getAccessToken();
 
