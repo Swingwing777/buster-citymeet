@@ -101,6 +101,7 @@ class App extends Component {
           />
           <Row>
             <Col>
+              <h4>Subjects by Availability</h4>
               <ChartPie
                 locations={this.state.locations}
                 events={this.state.events} />
