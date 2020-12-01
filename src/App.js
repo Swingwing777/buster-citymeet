@@ -8,7 +8,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import ChartScatter from './charts/ChartScatter';
 import { Container } from 'react-bootstrap';
-import { getEvents, extractLocations } from './_support_/api';
+import { getEvents, extractLocations, extractGenres } from './_support_/api';
 
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
     locations: [],
     showEventCount: 32,
     userFilter: [],
+    genres: [],
   }
 
   updateEvents = (location) => {
@@ -56,12 +57,13 @@ class App extends Component {
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
+        this.setState({ events, locations: extractLocations(events), genres: extractGenres(events) });
       }
     })
       .catch((err) => {
         console.log(err);
       });
+
   }
 
   componentWillUnmount() {
@@ -69,6 +71,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('This App state - genres: ' + this.state.genres);
     return (
       <div className="App">
         <h1>CityMeet Calendar</h1>
