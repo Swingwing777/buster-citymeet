@@ -80,15 +80,14 @@ class App extends Component {
           <NumberOfEvents
             updateEventCount={this.updateEventCount}
           />
-          <EventList
-            events={this.state.events}
-            showEventCount={this.state.showEventCount}
-          />
-          {/* Other components */}
           <h2>Events in Each City</h2>
           <ChartScatter
             // getData exported to ChartScatter as props
             getData={this.getData} />
+          <EventList
+            events={this.state.events}
+            showEventCount={this.state.showEventCount}
+          />
         </Container>
       </div >
     );
