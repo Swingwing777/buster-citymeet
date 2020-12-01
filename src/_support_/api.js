@@ -5,38 +5,47 @@ import axios from 'axios';
 import NProgress from 'nprogress';
 
 export const extractLocations = (events) => {
-
-  // Original
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
   return locations;  // An array of locations
 };
 
-export const getGenres = (events) => {
-  var extractAngular = events.map((event) => event.summary.search("Angular"));
-  var extractJavaScript = events.map((event) => event.summary.search("JavaScript"));
-  var extractJQuery = events.map((event) => event.summary.search("jQuery"));
-  var extractNode = events.map((event) => event.summary.search("Node"));
-  var extractReact = events.map((event) => event.summary.search("React"));
+export const extractGenres = (events) => {
+  var countAng = [];
+  var countjQ = [];
+  var countJS = [];
+  var countNode = [];
+  var countReact = [];
+  var extractGenres = events.map((event) => event.summary);
+  extractGenres.forEach((genre) => {
+    if (genre.indexOf("Angular") !== -1) {
+      countAng.push(genre)
+    }
+    if (genre.indexOf("jQuery") !== -1) {
+      countjQ.push(genre)
+    }
+    if (genre.indexOf("JavaScript") !== -1) {
+      countJS.push(genre)
+    }
+    if (genre.indexOf("Node") !== -1) {
+      countNode.push(genre)
+    }
+    if (genre.indexOf("React") !== -1) {
+      countReact.push(genre)
+    }
+  });
+
   var genres = [
-    extractAngular.length,
-    extractJavaScript.length,
-    extractJQuery.length,
-    extractNode.length,
-    extractReact.length
-  ]
-  // var genres = {
-  //   AngularJS: extractAngular.length,
-  //   JavaScript: extractJavaScript.length,
-  //   jQuery: extractJQuery.length,
-  //   Node: extractNode.length,
-  //   React: extractReact.length
-  // }
+    countAng.length,
+    countjQ.length,
+    countJS.length,
+    countNode.length,
+    countReact.length
+  ];
 
-  console.log(genres);
-  return genres;  // Array of genre.lengths in alphabetical order
-
-};
+  // console.log('Api.js exported genres: ' + genres);
+  return genres; // Array of genre.lengths in alphabetical order
+}
 
 const checkToken = async (accessToken) => {
   const result = await fetch(
