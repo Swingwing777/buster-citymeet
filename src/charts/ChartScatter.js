@@ -17,7 +17,6 @@ function ChartScatter({ getData }) {
 
   return (
     <div>
-      <h4>Separate component version</h4>
       <ResponsiveContainer height={400}>
         <ScatterChart
           margin={{
