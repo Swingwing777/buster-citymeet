@@ -39,6 +39,7 @@ class Event extends Component {
       </div>
       <div className='eventTimezone'>{event.start.timeZone}</div>
       <div className='eventLocation'>{event.location}</div>
+      <div><hr></hr></div>
       <div className='eventDetails'>{event.description}</div>
       <b
         className='details-btn'
