@@ -9,7 +9,33 @@ export const extractLocations = (events) => {
   // Original
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
-  return locations;
+  return locations;  // An array of locations
+};
+
+export const getGenres = (events) => {
+  var extractAngular = events.map((event) => event.summary.search("Angular"));
+  var extractJavaScript = events.map((event) => event.summary.search("JavaScript"));
+  var extractJQuery = events.map((event) => event.summary.search("jQuery"));
+  var extractNode = events.map((event) => event.summary.search("Node"));
+  var extractReact = events.map((event) => event.summary.search("React"));
+  var genres = [
+    extractAngular.length,
+    extractJavaScript.length,
+    extractJQuery.length,
+    extractNode.length,
+    extractReact.length
+  ]
+  // var genres = {
+  //   AngularJS: extractAngular.length,
+  //   JavaScript: extractJavaScript.length,
+  //   jQuery: extractJQuery.length,
+  //   Node: extractNode.length,
+  //   React: extractReact.length
+  // }
+
+  console.log(genres);
+  return genres;  // Array of genre.lengths in alphabetical order
+
 };
 
 const checkToken = async (accessToken) => {
