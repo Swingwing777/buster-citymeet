@@ -40,7 +40,7 @@ function ChartPie({ events }) {
   // const COLORS = ['red', 'orange', 'green', 'blue', 'yellow'];  // testing only
   return (
     <ResponsiveContainer height={400}>
-      <PieChart width={400} height={400}>
+      <PieChart >
         <Pie
           data={data}
           cx={200}
