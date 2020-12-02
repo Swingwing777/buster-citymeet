@@ -10,43 +10,6 @@ export const extractLocations = (events) => {
   return locations;  // An array of locations
 };
 
-export const extractGenres = (events) => {
-  var countAng = [];
-  var countjQ = [];
-  var countJS = [];
-  var countNode = [];
-  var countReact = [];
-  var extractGenres = events.map((event) => event.summary);
-  extractGenres.forEach((genre) => {
-    if (genre.indexOf("Angular") !== -1) {
-      countAng.push(genre)
-    }
-    if (genre.indexOf("jQuery") !== -1) {
-      countjQ.push(genre)
-    }
-    if (genre.indexOf("JavaScript") !== -1) {
-      countJS.push(genre)
-    }
-    if (genre.indexOf("Node") !== -1) {
-      countNode.push(genre)
-    }
-    if (genre.indexOf("React") !== -1) {
-      countReact.push(genre)
-    }
-  });
-
-  var genres = [
-    countAng.length,
-    countjQ.length,
-    countJS.length,
-    countNode.length,
-    countReact.length
-  ];
-
-  // console.log('Api.js exported genres: ' + genres);
-  return genres; // Array of genre.lengths in alphabetical order
-}
-
 const checkToken = async (accessToken) => {
   const result = await fetch(
     `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
