@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/buster-citymeet/static/css/main.6b1613f3.chunk.css",
-    "main.js": "/buster-citymeet/static/js/main.8780c945.chunk.js",
-    "main.js.map": "/buster-citymeet/static/js/main.8780c945.chunk.js.map",
-    "runtime-main.js": "/buster-citymeet/static/js/runtime-main.bd1c6128.js",
-    "runtime-main.js.map": "/buster-citymeet/static/js/runtime-main.bd1c6128.js.map",
-    "static/js/2.ce31f82b.chunk.js": "/buster-citymeet/static/js/2.ce31f82b.chunk.js",
-    "static/js/2.ce31f82b.chunk.js.map": "/buster-citymeet/static/js/2.ce31f82b.chunk.js.map",
-    "static/js/3.5fc7dbd4.chunk.js": "/buster-citymeet/static/js/3.5fc7dbd4.chunk.js",
-    "static/js/3.5fc7dbd4.chunk.js.map": "/buster-citymeet/static/js/3.5fc7dbd4.chunk.js.map",
+    "main.css": "/buster-citymeet/static/css/main.fadc2ca9.chunk.css",
+    "main.js": "/buster-citymeet/static/js/main.2c19ade0.chunk.js",
+    "main.js.map": "/buster-citymeet/static/js/main.2c19ade0.chunk.js.map",
+    "runtime-main.js": "/buster-citymeet/static/js/runtime-main.335cedb1.js",
+    "runtime-main.js.map": "/buster-citymeet/static/js/runtime-main.335cedb1.js.map",
+    "static/js/2.c7244053.chunk.js": "/buster-citymeet/static/js/2.c7244053.chunk.js",
+    "static/js/2.c7244053.chunk.js.map": "/buster-citymeet/static/js/2.c7244053.chunk.js.map",
+    "static/js/3.287373ca.chunk.js": "/buster-citymeet/static/js/3.287373ca.chunk.js",
+    "static/js/3.287373ca.chunk.js.map": "/buster-citymeet/static/js/3.287373ca.chunk.js.map",
     "index.html": "/buster-citymeet/index.html",
     "service-worker.js": "/buster-citymeet/service-worker.js",
     "service-worker.js.map": "/buster-citymeet/service-worker.js.map",
-    "static/css/main.6b1613f3.chunk.css.map": "/buster-citymeet/static/css/main.6b1613f3.chunk.css.map",
-    "static/js/2.ce31f82b.chunk.js.LICENSE.txt": "/buster-citymeet/static/js/2.ce31f82b.chunk.js.LICENSE.txt"
+    "static/css/main.fadc2ca9.chunk.css.map": "/buster-citymeet/static/css/main.fadc2ca9.chunk.css.map",
+    "static/js/2.c7244053.chunk.js.LICENSE.txt": "/buster-citymeet/static/js/2.c7244053.chunk.js.LICENSE.txt",
+    "static/media/citymeet-512.3b550c9d.png": "/buster-citymeet/static/media/citymeet-512.3b550c9d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.bd1c6128.js",
-    "static/js/2.ce31f82b.chunk.js",
-    "static/css/main.6b1613f3.chunk.css",
-    "static/js/main.8780c945.chunk.js"
+    "static/js/runtime-main.335cedb1.js",
+    "static/js/2.c7244053.chunk.js",
+    "static/css/main.fadc2ca9.chunk.css",
+    "static/js/main.2c19ade0.chunk.js"
   ]
 }
