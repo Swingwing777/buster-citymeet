@@ -27,14 +27,14 @@ function ChartPie({ events }) {
     return data;
   };
 
-  const COLORS = ['#a6c8ff', '#80b0ff', '#619dff', '#3b85ff', '#146dff'];
+  const COLORS = ['#cfe0ff', '#8aace6', '#5885d1', '#2457ad', '#002e7d'];
   return (
-    <ResponsiveContainer height={400}>
-      <PieChart width={400} height={400}>
+    <ResponsiveContainer height={300}>
+      <PieChart width={300} height={300}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx='50%'
+          cy={160}
           labelLine={false}
           label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
           outerRadius={80}
@@ -46,9 +46,9 @@ function ChartPie({ events }) {
           }
         </Pie>
         <Tooltip />
-        <Legend verticalAlign="top" height={36} />
+        <Legend align="center" verticalAlign="top" layout="horizontal" height={20} />
       </PieChart>
-    </ResponsiveContainer>
+    </ResponsiveContainer >
   );
 }
 

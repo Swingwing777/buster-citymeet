@@ -1,16 +1,16 @@
 // src/App.js
 
 import React, { Component } from 'react';
-import './App.css';
-import "./nprogress.css";
-import EventList from './EventList';
-import CitySearch from './CitySearch';
-import NumberOfEvents from './NumberOfEvents';
-import ChartScatter from './charts/ChartScatter';
-import ChartPie from './charts/ChartPie';
-// import EventGenre from './charts/EventGenre';
 import { Container } from 'react-bootstrap';
-import { getEvents, extractLocations } from './_support_/api';
+import './App.css';
+import ChartPie from './charts/ChartPie';
+import ChartScatter from './charts/ChartScatter';
+import CitySearch from './CitySearch';
+import EventList from './EventList';
+import "./nprogress.css";
+import NumberOfEvents from './NumberOfEvents';
+import { extractLocations, getEvents } from './_support_/api';
+import citymeet from './_support_/citymeet-512.png';
 
 
 class App extends Component {
@@ -73,7 +73,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>CityMeet Calendar</h1>
+        <div>
+          <img id="citymeet_logo" src={citymeet} alt="CityMeet app logo" />
+          <h1>CityMeet Calendar</h1>
+        </div>
+
         <h4>Choose your nearest city</h4>
         <Container>
           <CitySearch

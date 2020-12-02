@@ -20,7 +20,7 @@ function ChartScatter({ getData }) {
       <ResponsiveContainer height={400}>
         <ScatterChart
           margin={{
-            top: 20, right: 20, bottom: 20, left: 20,
+            top: 30, right: 10, bottom: 15, left: 10,
           }}
         >
           <CartesianGrid />
