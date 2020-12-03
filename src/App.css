@@ -87,6 +87,11 @@ input[type="number"] {
   position: relative;
 }
 
+.eventSummary {
+  font-size: large;
+  font-weight: bold;
+}
+
 .details-btn {
   position: absolute;
   right: 5px;
