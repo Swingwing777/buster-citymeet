@@ -27,6 +27,11 @@ function ChartPie({ events }) {
     return data;
   };
 
+  const renderLabel = ({ percent, name }) => {
+    const label = (percent > 0.05 ? `${name} ${(percent * 100).toFixed(0)}%` : ``);
+    return label;
+  }
+
   const COLORS = ['#cfe0ff', '#8aace6', '#5885d1', '#2457ad', '#002e7d'];
   return (
     <ResponsiveContainer height={300}>
@@ -36,7 +41,7 @@ function ChartPie({ events }) {
           cx='50%'
           cy={160}
           labelLine={false}
-          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+          label={renderLabel}
           outerRadius={80}
           fill="#8884d8"
           dataKey="value"

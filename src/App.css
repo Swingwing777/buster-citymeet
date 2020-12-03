@@ -216,9 +216,20 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
+ 
+.pie {
+  box-shadow: 1px 1px 1px gray;
+}
 
 #citymeet_logo {
   width: 75px;
+  border-radius: 5px;
+  box-shadow: 
+  2px 0px 3px white inset,
+  0px 2px 3px white inset,
+  1px 0px 1px rgb(124, 124, 124),
+  0px 1px 1px rgb(75, 74, 74);
+
 }
 
 
