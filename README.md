@@ -11,12 +11,18 @@ Serverless functions have been used to authorize and access a CareerFoundry even
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), used together with:
 
   Google Calendar API
+  
   Testing with Jest, Enzyme and Cucumber
+  
   Progressive Web App
+  
   Serverless functions (OAuth) hosted by Amazon AWS
+  
   React-bootstrap styling
+  
   Rechart data visualisation
-  Hosting: GitHub Pages (https://swingwing777.github.io/buster-citymeet/)
+  
+  Hosting on GitHub Pages (https://swingwing777.github.io/buster-citymeet/)
   
 ## Privacy Policy
 
