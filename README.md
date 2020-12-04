@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# CityMeet:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The objective was to build a React-based progressive web application using Google Calendars.
+
+The principles of test-driven, behaviour-driven development and end-to-end testing were applied.
+
+Serverless functions have been used to authorize and access a CareerFoundry event calendar, with Rechart data visualisation added to allow an intuitive breakdown of events by location and topic.
+
+## Build Tools
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), used together with:
+
+  Google Calendar API
+  Testing with Jest, Enzyme and Cucumber
+  Progressive Web App
+  Serverless functions (OAuth) hosted by Amazon AWS
+  React-bootstrap styling
+  Rechart data visualisation
+  Hosting: GitHub Pages (https://swingwing777.github.io/buster-citymeet/)
+  
+## Privacy Policy
+
+This project is for developer education purposes only, with all Calendar API data provided by Career Foundry.  
+
+No user information is requested, accessed, stored or otherwise retained by the developer or the developer code. Allowing app access to a user's Google account is needed solely by Google to view the app's functionaility (including that of the AWS hosted serverless functions used to obtain an access token).  Any information exchanged in the authorization process is entirely between the user and Google, and not shared with or stored by the developer or buster-citymeet in any way of form.
+
+Access can be cancelled at any time by the user via their Google account settings.
 
 ## Available Scripts
 
